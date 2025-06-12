@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="bg-zinc-900 w-full min-h-screen text-white p-10">
-            <a class="text-2xl text-zinc-500" href="/">Back home</h1>
+            <a class="text-2xl text-zinc-500" href="/">Back home</a>
             <h1 class="text-2xl text-zinc-500">Users</h1>
             <div class="mt-10 flex gap-4 flex-wrap">
                 <% if(users.length > 0 ) { %>
@@ -23,8 +23,8 @@
                         <h1 class="text-2xl tracking-tighter"><%=val.name%></h1>
                         <h1 class="tracking-tighter"><%=val.email%></h1>
                     </div>
-                    <div class="flex mt-1">
-                        <a class="text-blue-400 mr-10"
+                    <div class="flex mt-1 justify-between">
+                        <a class="text-blue-400"
                             href="/edit/<%=val._id%>">Edit</a>
                         <a class="text-yellow-200"
                             href="/delete/<%=val._id%>">Delete</a>
