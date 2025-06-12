@@ -16,12 +16,18 @@
             <div class="mt-10 flex gap-4 flex-wrap">
                 <% if(users.length > 0 ) { %>
                 <% users.forEach((val) => { %>
-                <div class="bg-zinc-800 w-90 h-96 rounded-lg px-3 py-3">
+                <div class="bg-zinc-800 w-90 h-103 rounded-lg px-3 py-3">
                     <img class="w-full h-70"
                         src="<%=val.image%>" />
                     <div class="mt-3">
                         <h1 class="text-2xl tracking-tighter"><%=val.name%></h1>
-                        <h1 class="text-blue-400"><%=val.email%></h1>
+                        <h1 class="tracking-tighter"><%=val.email%></h1>
+                    </div>
+                    <div class="flex mt-1">
+                        <a class="text-blue-400 mr-10"
+                            href="/edit/<%=val._id%>">Edit</a>
+                        <a class="text-yellow-200"
+                            href="/delete/<%=val._id%>">Delete</a>
                     </div>
                 </div>
                 <% })%>

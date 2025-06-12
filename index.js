@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 
 app.post('/register', async (req, res) => {
     const { name, email, image } = req.body;
-    console.log("Received data:", req.body);
     await userModel.create({name, email, image})
     res.redirect('/read');
 })
@@ -24,5 +23,11 @@ app.get('/read', async (req, res) => {
     let users = await userModel.find();
     res.render("view", { users: users });
 })
+
+app.get('/delete/:id', async (req, res) => {  
+    let users = await userModel.findOneAndDelete({_id: req.params.id});
+    res.redirect("/read");
+})
+
 
 app.listen(3000);
